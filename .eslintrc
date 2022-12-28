@@ -1,0 +1,60 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:jsonc/recommended-with-jsonc",
+    "plugin:jsonc/prettier",
+    "plugin:svelte/recommended",
+    "plugin:svelte/prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "extraFileExtensions": [".svelte"],
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["*.json", "*.json5", "*.jsonc"],
+      "parser": "jsonc-eslint-parser"
+    },
+    {
+      "files": "*.svelte",
+      "parser": "svelte-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+      },
+      "rules": {
+        "@typescript-eslint/no-unused-expressions": 0
+      }
+    }
+  ],
+  "plugins": ["@typescript-eslint", "html"],
+  "rules": {
+    "prettier/prettier": ["warn", {}, { "usePrettierrc": true }],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "unicorn/prevent-abbreviations": [
+      "warn",
+      {
+        "allowList": {
+          "conf": true
+        }
+      }
+    ]
+  }
+}
