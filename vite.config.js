@@ -1,13 +1,18 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [sveltekit()],
   clearScreen: false,
   server: {
     port: 1420,
     strictPort: true,
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    include: ['./src/**/*.{test,spec}.ts'],
+    setupFiles: ['./tests/setup.ts'],
   },
   envPrefix: ['VITE_', 'TAURI_'],
   build: {

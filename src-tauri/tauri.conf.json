@@ -1,7 +1,7 @@
 {
   "build": {
-    "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "pnpm vite dev",
+    "beforeBuildCommand": "pnpm vite build",
     "devPath": "http://localhost:1420",
     "distDir": "../build",
     "withGlobalTauri": false
@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.github.arunim-io.rustymail",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
