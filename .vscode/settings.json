@@ -1,3 +1,4 @@
 {
-  "eslint.validate": ["javascript", "typescript", "svelte", "json"]
+  "eslint.validate": ["javascript", "typescript", "svelte", "json"],
+  "cSpell.words": ["skeletonlabs"]
 }

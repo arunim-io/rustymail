@@ -12,7 +12,8 @@
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:jsonc/prettier",
     "plugin:svelte/recommended",
-    "plugin:svelte/prettier"
+    "plugin:svelte/prettier",
+    "plugin:tailwindcss/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -21,6 +22,12 @@
     "sourceType": "module"
   },
   "overrides": [
+    {
+      "files": "*.cjs",
+      "rules": {
+        "@typescript-eslint/no-var-requires": 0
+      }
+    },
     {
       "files": ["*.json", "*.json5", "*.jsonc"],
       "parser": "jsonc-eslint-parser"
